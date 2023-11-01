@@ -21,7 +21,7 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
     // put bottom 8 bits of second counter out on the bidirectional gpio
     assign uio_out = second_counter[7:0];
-
+    /*
     // external clock is 10MHz, so need 24 bit counter
     reg [23:0] second_counter;
     reg [3:0] digit;
@@ -56,5 +56,6 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
 
     // instantiate segment display
     seg7 seg7(.counter(digit), .segments(led_out));
-
+    */
+    
 endmodule
