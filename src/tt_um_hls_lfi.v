@@ -21,7 +21,25 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     assign uio_oe = 8'b11111111;
     
     
-    
+	input  logic [0:0] clk_i ,
+	input  logic [7:0] current_i ,
+	output logic [7:0] nu_o ,
+	//input  logic [0:0] reset ,
+	input  logic [0:0] rst_n ,
+	output logic [0:0] spike_o 
+	
+	Lfi 
+	#()
+	Lfi1 (
+	.clk_i(clk),
+	.current_i(ui_in)
+	,.nu_o(uo_out)
+	,.rst_n(rst_n)
+	,.spike_o(uio_out[7])
+	); 
+  
+  
+  
     
     /*
     // put bottom 8 bits of second counter out on the bidirectional gpio
