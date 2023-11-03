@@ -3,7 +3,11 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, Timer, ClockCycles
 
 
+<<<<<<< HEAD
 #segments = [ 63, 6, 91, 79, 102, 109, 124, 7, 127, 103 ]
+=======
+segments = [ 63, 6, 91, 79, 102, 109, 125, 7, 127, 111 ]
+>>>>>>> a7e71a2f1b954fff59597838ef1453dba01f8861
 
 @cocotb.test()
 async def test_lfi(dut):
