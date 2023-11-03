@@ -42,7 +42,7 @@ module Lfi
   //   else:
   //     s.u_w <<= s.nu_o
   
-  always_ff @(posedge clk) begin : countblk
+  always_ff @(posedge clk_i) begin : countblk
     if ( ~rst_n ) begin
       u_w <= 8'd0;
       threshold_w <= 8'd127;

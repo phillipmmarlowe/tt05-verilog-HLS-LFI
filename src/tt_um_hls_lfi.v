@@ -1,6 +1,6 @@
 `default_nettype none
 
-module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
+module tt_um_hls_lfi #( parameter MAX_COUNT = 24'd10_000_000 ) (
     input  wire [7:0] ui_in,    // Dedicated inputs - connected to the input switches
     output wire [7:0] uo_out,   // Dedicated outputs - connected to the 7 segment display
     input  wire [7:0] uio_in,   // IOs: Bidirectional Input path
@@ -19,14 +19,16 @@ module tt_um_seven_segment_seconds #( parameter MAX_COUNT = 24'd10_000_000 ) (
     
     // use bidirectionals as outputs
     assign uio_oe = 8'b11111111;
+    assign uio_out[6:0] = 6'd0;
     
-    
+    /*
 	input  logic [0:0] clk_i ,
 	input  logic [7:0] current_i ,
 	output logic [7:0] nu_o ,
 	//input  logic [0:0] reset ,
 	input  logic [0:0] rst_n ,
 	output logic [0:0] spike_o 
+	*/
 	
 	Lfi 
 	#()
