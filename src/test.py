@@ -6,7 +6,7 @@ from cocotb.triggers import RisingEdge, FallingEdge, Timer, ClockCycles
 
 @cocotb.test()
 async def test_lfi(dut):
-    CURRENT = 10
+    CURRENT = 100
 
     dut._log.info("starting simulation")
     clock = Clock(dut.clk, 1, units="ns")
@@ -24,7 +24,7 @@ async def test_lfi(dut):
     dut.ui_in.value = CURRENT
     for i in range(20):
         await ClockCycles(dut.clk, 10)
-    
+    dut._log.info("test done")
 
 
 
