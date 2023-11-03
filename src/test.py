@@ -22,7 +22,7 @@ async def test_lfi(dut):
     dut.ui_in.value = 0
     await ClockCycles(dut.clk, 10)
     dut.ui_in.value = CURRENT
-    for i in range(10):
+    for i in range(20):
         await ClockCycles(dut.clk, 10)
     
 
