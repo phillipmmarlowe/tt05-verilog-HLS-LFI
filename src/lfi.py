@@ -23,6 +23,10 @@ class Lfi(Component):
 
     @update
     def updateblk():
-      s.nu_o @= s.current_i + (s.u_w >> 1)
+      #if (~(s.spike_o)):
+        #s.nu_o @= s.current_i + (s.u_w >> 1)
+      #else:
+        #s.nu_o @= 0
+      s.nu_o @= s.current_i + (s.u_w >> 1) if ~(s.spike_o) else 0
       s.spike_o @= (s.u_w >= s.threshold_w)
 

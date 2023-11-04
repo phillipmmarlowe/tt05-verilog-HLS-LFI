@@ -5,7 +5,7 @@
 // Renamed and slightly modified by Phillip Marlowe
 
 // PyMTL Component Lfi Definition
-// At /workspace/lfi.py
+// At /home/vboxuser/Desktop/tt05-verilog-HLS-LFI/src/lfi.py
 
 module Lfi
 (
@@ -21,23 +21,19 @@ module Lfi
   logic [7:0] u_w;
 
   // PyMTL Update Block Source
-  // At /workspace/lfi.py:24
+  // At /home/vboxuser/Desktop/tt05-verilog-HLS-LFI/src/lfi.py:24
   // @update
   // def updateblk():
-  //   #if (~(s.spike_o)):
-  //     #s.nu_o @= s.current_i + (s.u_w >> 1)
-  //   #else:
-  //     #s.nu_o @= 0
-  //   s.nu_o @= s.current_i + (s.u_w >> 1) if ~(s.spike_o) else 0
+  //   s.nu_o @= s.current_i + (s.u_w >> 1)
   //   s.spike_o @= (s.u_w >= s.threshold_w)
   
   always_comb begin : updateblk
-    nu_o = ( ~spike_o ) ? current_i + ( u_w >> 1'd1 ) : 8'd0;
+    nu_o = current_i + ( u_w >> 1'd1 );
     spike_o = u_w >= threshold_w;
   end
 
   // PyMTL Update Block Source
-  // At /workspace/lfi.py:16
+  // At /home/vboxuser/Desktop/tt05-verilog-HLS-LFI/src/lfi.py:16
   // @update_ff
   // def countblk():
   //   if (~s.rst_n):
